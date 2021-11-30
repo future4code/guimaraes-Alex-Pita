@@ -274,16 +274,84 @@ dizerSePodeEstudar(terminouEnsinoMedioUsuario,maiorDeIdadeEnsinoMedioUsuario,cur
 //  turnoDoDia = prompt("Qual turno você estudo? digitar M (matutino) ou V (Vespertino) ou N (Noturno).")
 
 //  saudacao(turnoDoDia)
-let filme = prompt("Qual gênero vai ser assistido?")
-let valorIngresso = Number(prompt("Qual o valor do ingresso?"))
+// let filme = prompt("Qual gênero vai ser assistido?")
+// let valorIngresso = Number(prompt("Qual o valor do ingresso?"))
 
-function generoEscolhido(filme){
+// function generoEscolhido(filme){
 
-if(filme === "fantasia" && valorIngresso < 15){
-        console.log("Bom filme!");
+// if(filme === "fantasia" && valorIngresso < 15){
+//         console.log("Bom filme!");
+// }
+// else{
+//     console.log("Escolha outro filme :(");
+// }
+// }
+// generoEscolhido(filme)
+
+const nome = prompt("Qual o seu nome?");
+const tipoDeJogo = prompt("IN indica internacional e DO indica doméstico");
+const etapaDoJogo = prompt("SF indica semi-final; DT indica decisão de terceiro lugar; e FI indica final");
+const categoria = prompt("pode ser as opções 1, 2, 3 ou 4");
+const quantidade = Number( prompt("Quantos ingressos deseja"))
+
+const calcularValorIngresso = (tipo, etapa, cat) => {
+
+    let valorTotal;
+
+    if (etapa === "SF") {
+        if (cat === "1") {
+            valorTotal = 1320;
+        } else if (cat === "2") {
+            valorTotal = 880;
+        } 
+        else if (cat === "3") {
+            valorTotal = 550;
+        }
+        else if (cat === "4") {
+            valorTotal = 220;
+        }
+ }
+    if (etapa === "DT") {
+        if (cat === "1") {
+            valorTotal = 660;
+        } else if (cat === "2") {
+            valorTotal = 440;
+        } 
+        else if (cat === "3") {
+            valorTotal = 330;
+        }
+        else if (cat === "4") {
+            valorTotal = 170;
+        }
+ }
+    if (etapa === "FI") {
+    if (cat === "1") {
+        valorTotal = 1980;
+    } else if (cat === "2") {
+        valorTotal = 1320;
+    } 
+    else if (cat === "3") {
+        valorTotal = 880;
+    }
+    else if (cat === "4") {
+        valorTotal = 330;
+    }
+ }
+
+        if(tipo === "IN"){
+        valorTotal /= 4.10;
+ }
+    return valorTotal;
 }
-else{
-    console.log("Escolha outro filme :(");
-}
-}
-generoEscolhido(filme)
+
+const valorIngresso = calcularValorIngresso(tipoDeJogo, etapaDoJogo, categoria)
+
+console.log(`---Dados da compra--- 
+Nome do cliente:  ${nome} 
+Tipo do jogo:  ${tipoDeJogo} 
+Etapa do jogo:  ${etapaDoJogo} 
+Categoria:  ${categoria} 
+Quantidade de Ingressos:  ${quantidade} ingressos 
+---Valores--- 
+Valor do ingresso:  R$ ${valorIngresso}
+Valor total:  R$ ${valorIngresso * quantidade}`);
