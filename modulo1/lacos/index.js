@@ -79,7 +79,7 @@ soma(idade, nome, profissao)*/
 //     console.log(arrayPet);
 // }
 
-let arrayOriginal = [80, 30, 130, 40, 60, 21,70,120,90,103,110,55]
+//let arrayOriginal = [80, 30, 130, 40, 60, 21,70,120,90,103,110,55]
 
 
 
