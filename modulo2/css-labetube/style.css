@@ -1,0 +1,46 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+header{
+    background-color: orange;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+        
+}
+header > button{
+    margin: 40px;
+    margin-right: 70px;
+    padding: 8px 60px;
+    padding-left: 10px;
+    
+}
+footer{
+    background-color: slategray;
+    padding: 30px;
+    color: white;
+}
+footer > h1{
+    text-align: center;
+}
+main{
+    margin: 20px 0;
+    display: flex;
+}
+div > div{
+    text-align: center;
+    border: 1px solid orange
+}
+
+.principal{
+    display: grid;
+    grid-template-columns: repeat(4 , 1fr);
+    grid-template-rows: repeat(2 , 1fr);
+    text-align: center;
+    margin: 0 auto;
+    gap: 10px;
+}
+
+
