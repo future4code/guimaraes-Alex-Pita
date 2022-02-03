@@ -3,14 +3,16 @@ import './App.css';
 import CardGrande from './components/CardGrande/CardGrande';
 import CardPequeno from './components/CardPequeno/CardPequeno';
 import ImagemButton from './components/ImagemButton/ImagemButton';
-
+import Eu from './img/alex.jpeg'
+import IconeEmail from './img/icone-email.png'
+import IconeRua from './img/icone-rua.png'
 function App() {
   return (
     <div className="App">
       <div className="page-section-container">
         <h2>Dados pessoais</h2>
         <CardGrande 
-          imagem="/src/img/alex.jpeg" 
+          imagem={Eu} 
           nome="Alex Bitencourt Pita" 
           descricao="Sempre me encantei pelo mundo da tecnologia, até que resolvi arriscar. Estou em transição de carreira e meus estudos tenho focado no desenvolvimento fullstack.
 
@@ -25,12 +27,12 @@ function App() {
 
       <div className="page-section-container">
         <CardPequeno
-          imagem="./img/icone-email.png"
+          imagem={IconeEmail}
           fixo="Email"
           valor="Alex321654654@gmail.com"
         />
          <CardPequeno
-        imagem=""
+        imagem={IconeRua}
         fixo="Endereço"
         valor="Rua Salvador"
         />
@@ -44,14 +46,14 @@ function App() {
         <h2>Experiências profissionais</h2>
         <CardGrande 
           imagem="" 
-          nome="Alex Bitencourt Pita" 
+          nome="" 
           descricao="Desenvolvimento FullStack, – Labenu – Cursando
           OUTUBRO DE 2021 – SETEMBRO DE 2022
           !" 
         />
         
         <CardGrande 
-          imagem="https://imagens.canaltech.com.br/empresas/4418.400.jpg" 
+          imagem="https://img.icons8.com/color/452/nasa.png" 
           nome="NASA" 
           descricao="Apontando defeitos." 
         />
@@ -67,6 +69,10 @@ function App() {
         <ImagemButton 
           imagem="https://logodownload.org/wp-content/uploads/2014/09/twitter-logo-1-1.png" 
           texto="Twitter" 
+        />
+        <ImagemButton 
+          imagem="https://icones.pro/wp-content/uploads/2021/03/icone-linkedin-ronde-originale.png" 
+          texto="Linkdin" 
         />        
       </div>
     </div>
