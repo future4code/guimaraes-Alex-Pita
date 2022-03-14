@@ -1,10 +1,10 @@
-import React from "react";
-import {StyledHeader} from '../Styled'
+import React from "react"
+import {StyledMain} from '../Styled'
 import axios from "axios"
 import { URL_API } from "../constants/urls"
 import {Head} from '../constants/urls'
 
-class Headers extends React.Component {
+class Main extends React.Component {
   state = {
     playlist: [],
     inputCriarLista: ''
@@ -62,7 +62,13 @@ render() {
            </div>
   })
   return (
-    <StyledHeader>
+    <StyledMain>
+        <h2>Selecionar uma playlista</h2>
+        <p><strong>Musicas:</strong>{this.props.musica}</p>
+        <input />
+        <p><strong>Artistas:</strong>{this.props.artista}</p>
+        <input />
+        <p><strong>URL:</strong>{this.props.url}</p>
         <input />
         {playListsRenderizadas}
         <input 
@@ -70,9 +76,10 @@ render() {
         value={this.state.inputCriarLista} 
         onChange ={this.mudandoListaInput}/>
         <button onClick={this.criarPlaylist}>Criar Lista</button>
-    </StyledHeader>
+    </StyledMain>
   )
 }
+
 }
 
-export default Headers
+export default Main
