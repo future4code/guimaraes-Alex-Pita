@@ -1,24 +1,26 @@
 import React, { useEffect, useState } from "react"
 import axios from 'axios'
+import { ChakraProvider } from '@chakra-ui/react'
 import { BASE_URL } from '../../constants/Urls'
+import { Photo, Container, StyledButton } from "./StyledTela"
+import { Button } from '@chakra-ui/react'
 
-function TelaInicial() {
+function TelaInicial(props) {
    
-  const [telaRenderizada, setTelaRenderizada] = useState([])
+  const [profile, setProfile] = useState({})
 
   const renderizaTela = (event) => {
-    setTelaRenderizada(event.target.value)
+    setProfile(event.target.value)
   }
   
   const escolhaDoPerfil = () => {
     axios.get(`${BASE_URL}person`)
     .then((res) => {
-        console.log({escolhaDoPerfil: res.data.profile})
-
+        console.log('escolhaDoPerfil',res.data.profile)
+        setProfile(res.data.profile)
     })
     .catch((err) => {
         alert('Algo deu errado!')
-
     })
   }
 
@@ -27,11 +29,21 @@ function TelaInicial() {
       }, []);
 
     return(
-        <div>
-            {/* {telaRenderizada.map((user, id) => <p>{user.id} - {user.age} - {user.name} - {user.photo} - {user.bio}</p>)} */}
-            <h2 onClick={() => escolhaDoPerfil()} onChange={renderizaTela}>Astromatch</h2>
+      <Container>
+        <ChakraProvider>
+            <h1><strong>ASTROMATCH</strong></h1>
+            <Photo>
+               <img src={profile.photo}/>
+            </Photo>
+            <StyledButton>
+               <Button onClick={() => escolhaDoPerfil()} onChange={renderizaTela} colorScheme='teal' size='lg'>dislike</Button>
+               <Button onClick={() => escolhaDoPerfil()} onChange={renderizaTela} colorScheme='teal' size='lg'>like</Button>
+            </StyledButton>
+            
+            
+        </ChakraProvider>
           
-        </div>
+      </Container>
     )
 }
 
