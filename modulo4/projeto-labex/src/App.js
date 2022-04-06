@@ -1,11 +1,25 @@
 import React from "react"
-import HomePage  from "./pages/HomePage"
+import Router  from './routes/Router'
+import { createGlobalStyle } from "styled-components"
 
-function App() {
+const GlobalStyle = createGlobalStyle`
+   * {
+     margin: 0;
+     padding: 0;
+     text-align: center;
+   }
+
+   body{ background-image: url('http://cdn26.us1.fansshare.com/photo/pcwallpapers/seychelles-beautiful-beach-hd-wallpaper-pc-hd-wallpapers-515455447.jpg')}
+
+`
+
+const App = () => {
+
   return (
-    <div>
-       <HomePage />
-    </div>
+    <>
+      <GlobalStyle/>
+      <Router/>
+    </>
   )
 }
 
