@@ -8,7 +8,7 @@ export const useRequestData = (url, estadoInicial) => {
         axios.get(url)
         .then((res)=>{
             console.log(res.data)
-            setRespApi(res)
+            setRespApi(res.data)
         })
         .catch((err)=>{
             console.log(err)
