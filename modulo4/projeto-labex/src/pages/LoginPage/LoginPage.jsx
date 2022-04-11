@@ -1,5 +1,9 @@
 import React, { useState } from "react"
 import axios from "axios"
+import { ChakraProvider } from '@chakra-ui/react'
+import { theme } from '../../theme'
+import { Button } from '@chakra-ui/react'
+
 
 
 const LoginPage = () => {
@@ -36,12 +40,12 @@ const login = () => {
 
 
     return (
-      <div>
+      <ChakraProvider theme={theme}>
             <h2>LoginPage</h2>
             <input placeholder="E-mail" value={email} onChange={handleEmail}/>
             <input placeholder="Senha" value={password} onChange={handlePassword} type={'password'}/>
-            <button onClick={login}> Entrar! </button>
-      </div>
+            <Button colorScheme='blue' size='lg' onClick={login}> Entrar! </Button>
+      </ChakraProvider>
     )
   }
   

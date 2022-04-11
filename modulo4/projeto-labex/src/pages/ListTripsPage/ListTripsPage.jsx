@@ -3,6 +3,9 @@ import { goToApplicationFormPage } from '../../routes/Coordinator'
 import { goToBack } from '../../routes/Coordinator'
 import { useNavigate } from "react-router-dom"
 import { useRequestData } from '../../hooks/useRequestData'
+import { ChakraProvider } from '@chakra-ui/react'
+import { theme } from '../../theme'
+import { Button } from '@chakra-ui/react'
 
 const ListTripsPage = () => {
 
@@ -12,7 +15,7 @@ console.log('list', listTrips.trips)
 const navigate = useNavigate()
 
     return (
-      <div>
+      <ChakraProvider theme={theme}>
         <h2>ListTripsPage</h2>
         {listTrips?.trips?.map((trip,index)=>{
          return (<><p key={trip.id}>trip: {trip.name}</p>
@@ -22,9 +25,9 @@ const navigate = useNavigate()
          <p>DurationInDays: {trip.durationInDays}</p>
          </>)
         })}
-        <button onClick={()=> goToBack(navigate)}>Voltar</button>
-        <button onClick={()=> goToApplicationFormPage(navigate)}>Inscrever-se</button>
-      </div>
+        <Button colorScheme='blue' size='lg' onClick={()=> goToBack(navigate)}>Voltar</Button>
+        <Button colorScheme='blue' size='lg' onClick={()=> goToApplicationFormPage(navigate)}>Inscrever-se</Button>
+      </ChakraProvider>
     )
 }
 export default ListTripsPage

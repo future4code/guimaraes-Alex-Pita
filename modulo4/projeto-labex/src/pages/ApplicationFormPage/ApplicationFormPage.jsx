@@ -1,13 +1,16 @@
 import React from "react"
 import { useNavigate } from "react-router-dom"
 import { goToBack } from "../../routes/Coordinator"
+import { ChakraProvider } from '@chakra-ui/react'
+import { theme } from '../../theme'
+import { Button } from '@chakra-ui/react'
 
 const ApplicationFormPage = () => {
 
   const navigate = useNavigate()
 
     return (
-      <div>
+      <ChakraProvider theme={theme}>
             <h2>Inscreva-se para uma viagem</h2>
             <input placeholder="Escolha uma viagem"/>
             <input placeholder="Nome"/>
@@ -15,9 +18,9 @@ const ApplicationFormPage = () => {
             <input placeholder="Texto de Candidatura"/>
             <input placeholder="Profissão"/>
             <input placeholder="Escolha um País"/>
-            <button onClick={()=> goToBack(navigate)}>Voltar</button>
-            <button>Enviar</button>
-      </div>
+            <Button colorScheme='blue' size='lg' onClick={()=> goToBack(navigate)}>Voltar</Button>
+            <Button colorScheme='blue' size='lg'>Enviar</Button>
+      </ChakraProvider>
     )
   }
   
