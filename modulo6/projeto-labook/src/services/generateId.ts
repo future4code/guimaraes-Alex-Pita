@@ -1,5 +1,9 @@
-import {v4 as _generetId } from 'uuid'
+import { v4 as genId, validate } from 'uuid'
 
-export const generetId =()=>{
-    return _generetId()
+export const generateId=()=>{
+    return genId()
+}
+
+export const validadeId=(id: string)=>{
+    return validate(id)
 }

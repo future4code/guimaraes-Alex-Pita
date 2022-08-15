@@ -10,15 +10,15 @@ export class UserDatabase extends BaseDatabase {
          await UserDatabase.connection.insert({
             id: user.id,
             name: user.name,
-            nickname: user.nickname,
             email: user.email,
             password: user.password
-         }).into('Architecture_User')
-         
+         }).into('labook_users')
       } catch (error:any) {
          throw new Error(error.message)
       }
    
    }
+
+
 }
 

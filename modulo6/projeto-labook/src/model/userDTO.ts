@@ -1,7 +1,6 @@
-
-export interface UserInputDTO{
+export interface UserInputDTO {
+    id: string,
     name: string,
-    nickname: string,
     email: string,
     password: string
 }
