@@ -2,6 +2,6 @@ import { CustomError } from "../CustomError";
 
 export class InvalidPassword extends CustomError{
     constructor(){
-        super("Necessário informar uma senha", 400)
+        super("Informe uma senha", 400)
     }
 }
