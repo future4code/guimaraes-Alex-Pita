@@ -1,0 +1,46 @@
+[
+    {
+      "name": "Four Cheeses",
+      "price": 5,
+      "ingredients": [
+        "mozzarella",
+        "gorgonzola",
+        "Parmesan",
+        "provolone"
+      ]
+    },
+    {
+      "name": "tuna",
+      "price": 6,
+      "ingredients": [
+        "tuna",
+        "mozzarella"
+      ]
+    },
+    {
+      "name": "loin with catupiry",
+      "price": 5,
+      "ingredients": [
+        "loin",
+        "catupiry"
+       
+      ]
+    },
+    {
+      "name": "Diavola",
+      "price": 7.5,
+      "ingredients": [
+        "tomato",
+        "mozzarella",
+        "spicy salami"
+      ]
+    },
+    {
+      "name": "pepperoni",
+      "price": 5,
+      "ingredients": [
+        "smoked pepperoni",
+        "oregano"
+      ]
+    }
+  ]
